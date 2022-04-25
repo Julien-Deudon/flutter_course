@@ -9,41 +9,55 @@ class FlexPracticePage extends StatelessWidget {
       appBar: AppBar(),
       body: Column(
         children: [
-          Column(
-            children: [
-              Container(
-                color: Colors.blueAccent,
-                height: 50,
-              ),
-              Container(
-                color: Colors.amberAccent,
-                height: 50,
-              ),
-              Container(
-                color: Colors.deepPurpleAccent,
-                height: 50,
-              ),
-            ],
+          Expanded(
+            flex: 2,
+            child: Column(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    color: Colors.blueAccent,
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    color: Colors.amberAccent,
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Container(
+                    color: Colors.deepPurpleAccent,
+                  ),
+                ),
+              ],
+            ),
           ),
-          const Spacer(),
-          Row(
-            children: [
-              Container(
-                color: Colors.greenAccent,
-                height: 50,
-                width: 50,
-              ),
-              Container(
-                color: Colors.redAccent,
-                height: 50,
-                width: 50,
-              ),
-              Container(
-                color: Colors.blueGrey,
-                height: 50,
-                width: 50,
-              ),
-            ],
+          Expanded(
+            flex: 1,
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    color: Colors.greenAccent,
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    color: Colors.redAccent,
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Container(
+                    color: Colors.blueGrey,
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
