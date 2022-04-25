@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => DashboardPage(),
-        'stateful_practice': (context) => const StatefulPractice(),
+        'stateful_practice': (context) => StatefulPractice(),
       },
     );
   }

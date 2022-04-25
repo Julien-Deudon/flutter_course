@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class StatefulPractice extends StatelessWidget {
-  const StatefulPractice({Key? key}) : super(key: key);
+  StatefulPractice({Key? key}) : super(key: key);
 
-  final isStateful = false;
+  bool isStateful = false;
 
   @override
   Widget build(BuildContext context) {
