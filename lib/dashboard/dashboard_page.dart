@@ -5,6 +5,7 @@ class DashboardPage extends StatelessWidget {
 
   final Map<String, String> features = {
     'Stateful Practice': 'stateful_practice',
+    'Flex Practice': 'flex_practice',
   };
 
   @override

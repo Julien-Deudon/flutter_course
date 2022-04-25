@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
-class StatefulPractice extends StatelessWidget {
-  StatefulPractice({Key? key}) : super(key: key);
+class StatefulPractice extends StatefulWidget {
+  const StatefulPractice({Key? key}) : super(key: key);
 
+  @override
+  State<StatefulPractice> createState() => _StatefulPracticeState();
+}
+
+class _StatefulPracticeState extends State<StatefulPractice> {
   bool isStateful = false;
 
   @override
@@ -14,27 +19,31 @@ class StatefulPractice extends StatelessWidget {
             const Text('Is it stateful?'),
             ListTile(
               title: const Text('No'),
-              leading: Radio(
+              leading: Radio<bool>(
                 value: false,
                 groupValue: isStateful,
-                onChanged: (value) {
-                  print(value);
-                },
+                onChanged: _onChanged,
               ),
             ),
             ListTile(
               title: const Text('Yes'),
-              leading: Radio(
+              leading: Radio<bool>(
                 value: true,
                 groupValue: isStateful,
-                onChanged: (value) {
-                  print(value);
-                },
+                onChanged: _onChanged,
               ),
             )
           ],
         ),
       ),
     );
+  }
+
+  void _onChanged(bool? newValue) {
+    if (newValue != null) {
+      setState(() {
+        isStateful = newValue;
+      });
+    }
   }
 }

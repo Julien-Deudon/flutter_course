@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_intro/dashboard/dashboard_page.dart';
+import 'package:flutter_intro/flex_practice/flex_practice_page.dart';
 import 'package:flutter_intro/stateful_practice/stateful_practice_page.dart';
 
 void main() {
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => DashboardPage(),
-        'stateful_practice': (context) => StatefulPractice(),
+        'stateful_practice': (context) => const StatefulPractice(),
+        'flex_practice': (context) => const FlexPracticePage(),
       },
     );
   }
