@@ -10,6 +10,7 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // TODO: Use an TabBar to manage the views of the two exercises
     return Scaffold(
       body: ListView(
         children: features.entries
