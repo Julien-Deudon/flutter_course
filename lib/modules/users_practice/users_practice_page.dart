@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_intro/core/models/user_model.dart';
 import 'package:flutter_intro/core/service/users_service.dart';
+import 'package:go_router/go_router.dart';
 
 class UsersPracticePage extends StatelessWidget {
   const UsersPracticePage({Key? key}) : super(key: key);
@@ -16,11 +17,7 @@ class UsersPracticePage extends StatelessWidget {
             children: (snapshot.data as List<User>)
                 .map((user) => InkWell(
                       onTap: () {
-                        Navigator.pushNamed(
-                          context,
-                          '/user_detail',
-                          arguments: user,
-                        );
+                        GoRouter.of(context).push('/users/${user.id}');
                       },
                       child: Card(
                         child: Column(
