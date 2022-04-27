@@ -5,9 +5,8 @@ class FlexPracticePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Column(
+    return SafeArea(
+      child: Column(
         children: [
           Expanded(
             flex: 2,

@@ -12,29 +12,27 @@ class _StatefulPracticeState extends State<StatefulPractice> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            const Text('Is it stateful?'),
-            ListTile(
-              title: const Text('No'),
-              leading: Radio<bool>(
-                value: false,
-                groupValue: isStateful,
-                onChanged: _onChanged,
-              ),
+    return SafeArea(
+      child: Column(
+        children: [
+          const Text('Is it stateful?'),
+          ListTile(
+            title: const Text('No'),
+            leading: Radio<bool>(
+              value: false,
+              groupValue: isStateful,
+              onChanged: _onChanged,
             ),
-            ListTile(
-              title: const Text('Yes'),
-              leading: Radio<bool>(
-                value: true,
-                groupValue: isStateful,
-                onChanged: _onChanged,
-              ),
-            )
-          ],
-        ),
+          ),
+          ListTile(
+            title: const Text('Yes'),
+            leading: Radio<bool>(
+              value: true,
+              groupValue: isStateful,
+              onChanged: _onChanged,
+            ),
+          )
+        ],
       ),
     );
   }

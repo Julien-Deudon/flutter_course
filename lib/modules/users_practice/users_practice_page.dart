@@ -16,8 +16,10 @@ class UsersPracticePage extends StatelessWidget {
             children: (snapshot.data as List<User>)
                 .map((user) => InkWell(
                       onTap: () {
-                        print(
-                          'You need to redirect to user detail and pass User as argument',
+                        Navigator.pushNamed(
+                          context,
+                          '/user_detail',
+                          arguments: user,
                         );
                       },
                       child: Card(
@@ -31,10 +33,6 @@ class UsersPracticePage extends StatelessWidget {
                               '${user.email}',
                               style: Theme.of(context).textTheme.bodyText1,
                             ),
-                            Text('${user.phone}'),
-                            Text(
-                              '${user.address?.street}, ${user.address?.city}, ${user.address?.zipcode}',
-                            )
                           ],
                         ),
                       ),

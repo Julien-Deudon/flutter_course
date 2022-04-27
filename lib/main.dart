@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_intro/modules/dashboard/dashboard_page.dart';
+import 'package:flutter_intro/modules/user_detail_practice/user_detail_practice_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => DashboardPage(),
+        '/user_detail': (context) => const UserDetailPracticePage()
       },
     );
   }
