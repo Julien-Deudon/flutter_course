@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/': (context) => DashboardPage(),
-        '/user_detail': (context) => const UserDetailPracticePage()
+        '/user_detail': (context) => const UserDetailPracticePage(),
       },
     );
   }
