@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_intro/modules/dashboard/dashboard_page.dart';
 import 'package:flutter_intro/modules/user_detail_practice/user_detail_practice_page.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -14,14 +19,17 @@ class MyApp extends StatelessWidget {
     routes: <GoRoute>[
       GoRoute(
         path: '/',
-        builder: (context, state) => DashboardPage(),
-      ),
-      GoRoute(
-        path: '/users/:id',
-        builder: (context, state) => UserDetailPracticePage(
-          userId: state.params['id']!,
+        pageBuilder: (context, state) => NoTransitionPage(
+          child: DashboardPage(),
         ),
       ),
+      GoRoute(
+          path: '/users/:id',
+          pageBuilder: (context, state) => NoTransitionPage(
+                child: UserDetailPracticePage(
+                  userId: state.params['id']!,
+                ),
+              )),
     ],
   );
 

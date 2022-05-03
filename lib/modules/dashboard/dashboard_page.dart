@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_intro/modules/flex_practice/flex_practice_page.dart';
 import 'package:flutter_intro/modules/form_practice/form_practice_page.dart';
 import 'package:flutter_intro/modules/stateful_practice/stateful_practice_page.dart';
-import 'package:flutter_intro/modules/users_practice/users_practice_page.dart';
+import 'package:flutter_intro/modules/users_practice/presentation/users_practice_page.dart';
 
 class DashboardPage extends StatelessWidget {
   DashboardPage({Key? key}) : super(key: key);
@@ -37,7 +37,7 @@ class DashboardPage extends StatelessWidget {
           ),
           appBar: AppBar(
             bottom: TabBar(
-              onTap: (index) {
+              onTap: (_) {
                 if (FocusScope.of(context).hasFocus) {
                   FocusScope.of(context).unfocus();
                 }

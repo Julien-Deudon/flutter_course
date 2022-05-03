@@ -26,6 +26,7 @@ class _FormPracticePageState extends State<FormPracticePage> {
             textInputAction: TextInputAction.next,
             decoration: const InputDecoration(
               label: Text('email'),
+              hintText: 'Email',
             ),
             validator: (value) {
               if (value == null || !value.isValidEmail) {
